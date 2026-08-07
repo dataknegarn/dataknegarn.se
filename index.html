@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dataknegar'n AB</title>
+  <title>Dataknegarn AB</title>
 
   <!-- Import Inter from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +11,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      color-scheme: light;
+    }
+
     body {
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 3rem;
       box-sizing: border-box;
       text-align: center;
       background-color: #ffffff;
       color: #111111;
+    }
+
+    .site-header {
+      width: min(720px, 100%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #111111;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-size: 0.8rem;
+    }
+
+    .menu {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 0.95rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: #111111;
+      border-color: #111111;
     }
     
     .company-name {
@@ -31,6 +73,7 @@
       font-weight: bold;
       letter-spacing: -1px;
       margin-bottom: 0.75rem;
+      text-transform: none;
     }
 
     .subheaders {
@@ -40,25 +83,110 @@
     }
 
     .info-section {
+      display: none;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       max-width: 600px;
       line-height: 1.6;
       font-size: 0.95rem;
       color: #333333;
+      text-align: left;
+    }
+
+    .info-section.active,
+    .default-section.active {
+      display: block;
+    }
+
+    .default-section {
+      display: none;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      margin-top: 2.5rem;
+      max-width: 600px;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #333333;
+      text-align: left;
+    }
+
+    .default-section h2,
+    .info-section h2 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: none;
+      margin-bottom: 0.35rem;
+      color: #111111;
     }
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="#default" id="brand-link">Dataknegarn AB (under bildande)</a>
+    <nav class="menu" aria-label="Huvudmeny">
+      <a href="#tjanster" class="menu-link" data-target="tjanster">Tjänster</a>
+      <a href="#om" class="menu-link" data-target="om">Om</a>
+    </nav>
+  </header>
 
-  <div class="company-name">dataknegar'n AB</div>
+  <div class="company-name">dataknegar'n</div>
   <div class="subheaders">data architecture &bull; analytics engineering &bull; dataops</div>
 
-  <div class="info-section">
+  <section class="default-section active" id="default">
+    <h2>Hello World</h2>
     <p>
-      Sveriges bästa och mest ödmjuka datakonsult?<br/><br/><i>Augusti 2026: Dataknegarn AB är under bildande.</i>
+      <i>Augusti 2026: Dataknegarn AB är under bildande och inväntar klartecken från Bolagsverket!</i>
     </p>
-  </div>
+  </section>
+
+  <section class="info-section" id="tjanster">
+    <h2>Dataarkitektur</h2>
+    <p>
+      En erfaren dataknegare hjälper dig att designa och implementera en robust dataarkitektur som stödjer din organisation, dess affärsbehov och framtida tillväxt.</br>
+    </p>
+    <h2>Data engineering</h2>
+    <p>
+      Att bygga och optimera data pipelines, säkerställa datakvalitet och effektivt hantera stora datamängder är vardagsmat för en dataknegare.
+    </p>
+    <h2>Projektledning och verksamhetsutveckling</h2>
+    <p>
+      Det är kul att jobba med en dataknegare! En dataknegare kan leda komplicerade datarelaterade projekt och utveckla verksamheten med fokus på datadrivet beslutsfattande.
+    </p>
+  </section>
+
+  <section class="info-section" id="om">
+    <h2>Om</h2>
+    <p>
+      Dataknegarn AB (under bildande) är en leverantörsoberoende partner som levererar säkra, pragmatiska och kostnadseffektiva lösningar till samhällskritiska verksamheter i Sverige.
+    </p>
+  </section>
+
+  <script>
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const infoSections = document.querySelectorAll('.info-section');
+    const brandLink = document.getElementById('brand-link');
+    const defaultSection = document.getElementById('default');
+
+    const showSection = (targetId) => {
+      menuLinks.forEach((item) => item.classList.toggle('active', item.getAttribute('data-target') === targetId));
+      infoSections.forEach((section) => {
+        section.classList.toggle('active', section.id === targetId);
+      });
+      defaultSection.classList.toggle('active', targetId === 'default');
+    };
+
+    menuLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        showSection(link.getAttribute('data-target'));
+      });
+    });
+
+    brandLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      showSection('default');
+    });
+  </script>
 
 </body>
 </html>
