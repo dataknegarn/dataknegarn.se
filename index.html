@@ -77,9 +77,16 @@
     }
 
     .subheaders {
-      font-size: 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: clamp(0.75rem, 2.4vw, 1rem);
       color: #555555;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.12px;
+      display: block;
+      max-width: calc(100vw - 2rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
     }
 
     .info-section {
@@ -118,6 +125,38 @@
       margin-bottom: 0.35rem;
       color: #111111;
     }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1.5rem 0.75rem 2rem;
+      }
+
+      .site-header {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .company-name {
+        font-size: 2.5rem;
+      }
+
+      .subheaders {
+        font-size: 0.7rem;
+        letter-spacing: 0.08px;
+        display: block;
+        max-width: calc(100vw - 1.5rem);
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .subheaders::-webkit-scrollbar {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -135,10 +174,7 @@
   <section class="default-section active" id="default">
     <h2>Hello World</h2>
     <p>
-      <i>Augusti 2026: Dataknegarn AB är under bildande och inväntar klartecken från Bolagsverket!</i>
-    </p>
-  </section>
-
+        <i>Augusti 2026: Dataknegarn AB är under bildande och inväntar klartecken från Bolagsverket!</i> ⚙️
   <section class="info-section" id="tjanster">
     <h2>Dataarkitektur</h2>
     <p>
