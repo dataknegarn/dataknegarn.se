@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dataknegarn AB</title>
+  <title>dataknegar'n</title>
 
   <!-- Import Inter from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
       align-items: center;
       min-height: 100vh;
       margin: 0;
-      padding: 2rem 1rem 3rem;
+      padding: 2rem 1rem 1rem;
       box-sizing: border-box;
       text-align: center;
       background-color: #ffffff;
@@ -51,6 +51,7 @@
     .menu {
       display: flex;
       gap: 1.25rem;
+      margin-left: auto;
     }
 
     .menu a {
@@ -74,6 +75,12 @@
       letter-spacing: -1px;
       margin-bottom: 0.75rem;
       text-transform: none;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .company-name:hover {
+      color: #555555;
     }
 
     .subheaders {
@@ -126,6 +133,16 @@
       color: #111111;
     }
 
+    .site-footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      border-top: 1px solid #ececec;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.75rem;
+      color: #999999;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 520px) {
       body {
         padding: 1.5rem 0.75rem 2rem;
@@ -161,49 +178,60 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#default" id="brand-link">Dataknegarn AB (under bildande)</a>
+    <!-- <a class="brand" href="#default" id="brand-link">Dataknegarn AB (under bildande)</a> -->
     <nav class="menu" aria-label="Huvudmeny">
       <a href="#tjanster" class="menu-link" data-target="tjanster">Tjänster</a>
       <a href="#om" class="menu-link" data-target="om">Om</a>
     </nav>
   </header>
 
-  <div class="company-name">dataknegar'n</div>
-  <div class="subheaders">data architecture &bull; analytics engineering &bull; dataops</div>
+  <div class="company-name" id="company-name-link">dataknegar'n</div>
+  <div class="subheaders">data architecture &bull; data engineering &bull; for humans</div>
 
   <section class="default-section active" id="default">
-    <h2>Hello World</h2>
+    <h2>"...it was the age of wisdom, it was the age of foolishness..."</h2>
     <p>
-      <i>Augusti 2026: Dataknegarn AB är under bildande och inväntar klartecken från Bolagsverket!</i> ⚙️
+      Går det att starta och driva ett litet enpersonsbolag "i dessa tider" och försörja sin familj på det? <i>Såklart det gör!</i> Men inte om man sitter och petar sig i naveln på kvällarna och citerar Dickensböcker man inte ens har läst.<br><br>
+      Ett annat favoritcitat från okänd författare: <i>"99.9% av det man oroar sig för inträffar inte. Att oroa sig fungerar alltså!"</i><br><br>
+      Dataknegar'n säkerställer för tillfället orderböckerna inför det allra första räkenskapsåret med intressanta och viktiga uppdrag. Den här sidan uppdateras igen när verksamheten är igång på riktigt :-)
     </p>
   </section>
 
   <section class="info-section" id="tjanster">
     <h2>Dataarkitektur</h2>
     <p>
-      En erfaren dataknegare hjälper dig att designa och implementera en robust dataarkitektur som stödjer din organisation, dess affärsbehov och framtida tillväxt.</br>
+      Behöver du ett Lakehouse, något mer i nyklassicistisk stil, eller rentav en brutalistisk design? En dataarkitektur tas fram i riktning mot din organisations strategi och vision, utan att på något sätt förbise de som ska bygga, eller framför allt använda den. Dataknegar'n ritar, beskriver, förklarar, bygger och löser alla typer av problem som uppstår längs vägen.<br><br>
+      <i>(Och säkerställer att den där nya, fina dashboarden inte blir ett eget litet miljonprogram som två personer använder en gång per decennium.)</i><br></br>
     </p>
     <h2>Data engineering</h2>
     <p>
-      Att bygga och optimera data pipelines, säkerställa datakvalitet och effektivt hantera stora datamängder är vardagsmat för en dataknegare.
+      Data ska från A till B, och så ska det hända lite grejer på vägen. Att kravställa, bygga och optimera data pipelines är vardagsmat för Dataknegar'n, som har lärt sig den hårda vägen att verkligheten är komplex och att dataflöden just därför måste vara idempotenta.<br><br>
+      <i>Visste du förresten att "senior" betyder "har skjutit sig själv i foten fler gånger än antalet noder i ett överdimensionerat compute-kluster"?</i><br></br>
     </p>
     <h2>Projektledning och verksamhetsutveckling</h2>
     <p>
-      Det är kul att jobba med en dataknegare! En dataknegare kan leda komplicerade datarelaterade projekt och utveckla verksamheten med fokus på datadrivet beslutsfattande.
+      Dataknegar'n leder komplexa datarelaterade projekt och hjälper till att utveckla både team, individer och arbetssätt. Förändringsledning, arkitektur, kodbaser och sedermera agenter måste hänga ihop. Vi stackars långsamma homo sapiens måste hänga ihop!<br><br>
+      <i>"Daaata är den nya oljaaan!"</i> Som Strindberg (inte alls) uttryckte det. Den var väl inte ens fräsch när den kom? Dataknegar'n däremot - oljar ditt maskineri &#129299;<br><br>
     </p>
   </section>
 
   <section class="info-section" id="om">
-    <h2>Om</h2>
+    <h2>Dataknegarn AB</h2>
     <p>
-      Dataknegarn AB (under bildande) är en leverantörsoberoende partner som levererar säkra, pragmatiska och kostnadseffektiva lösningar till samhällskritiska verksamheter i Sverige.
+      ...är ett företag som inte finns. Bolagsverket godkände tyvärr inte namnet.<br><br>
+      Förnamn Efternamn Consulting AB (som inte <i>heller</i> finns, men jag kan inte avslöja det riktiga namnet riktigt än), är en leverantörsoberoende partner som levererar säkra, pragmatiska och kostnadseffektiva lösningar till samhällskritiska verksamheter i Sverige.
     </p>
   </section>
+
+  <footer class="site-footer">
+    <!-- &copy; 2026 Christian Schluter Consulting AB -->
+     &copy; 2026 A Brand New Super Small But Equally Super Efficient Swedish Data Solutions Company Yet to be Official
+  </footer>
 
   <script>
     const menuLinks = document.querySelectorAll('.menu-link');
     const infoSections = document.querySelectorAll('.info-section');
-    const brandLink = document.getElementById('brand-link');
+    const companyNameLink = document.getElementById('company-name-link');
     const defaultSection = document.getElementById('default');
 
     const showSection = (targetId) => {
@@ -221,7 +249,7 @@
       });
     });
 
-    brandLink.addEventListener('click', (event) => {
+    companyNameLink.addEventListener('click', (event) => {
       event.preventDefault();
       showSection('default');
     });
